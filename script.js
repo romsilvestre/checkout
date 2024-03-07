@@ -14,18 +14,7 @@ function generatePixCode() {
         return;
     }
 
-    var pixCode = "000201
-                  "26580014BR.GOV.BCB.PIX
-                  01
-                  36
-                  b42db6c7-d92d-49a5-9430-0c7444ccd3b7
-                 5204
-                  0000
-                  530398654049.995802BR
-                 5925
-                 ROMULO THIAGO SILVESTRE
-                 6009SAO PAULO
-                 61080540900062250521S9OrrBQ5walYDpa1gafp863046593;
+    var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925DSD DASD5205ROMULO THIAGO SILVESTRES6009SAO PAULO61080540900062250521S9OrrBQ5walYDpa1gafp863046593;
 
     document.getElementById('pixCode').value = pixCode;
     document.getElementById('pixCode').style.display = "block";
