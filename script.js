@@ -14,10 +14,18 @@ function generatePixCode() {
         return;
     }
 
-    var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925DSD DASD5205ROMULO THIAGO SILVESTRES6009SAO PAULO61080540900062250521S9OrrBQ5walYDpa1gafp863046593;
+    var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925"  " +  "S6009SAO PAULO61080540900062250521S9OrrBQ5walYDpa1gafp863046593";
 
     document.getElementById('pixCode').value = pixCode;
     document.getElementById('pixCode').style.display = "block";
     document.getElementById('paymentInfo').style.display = "block";
     copyPixCode();
+}
+
+function copyPixCode() {
+    var copyText = document.getElementById("pixCode");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.getElementById('paymentInfo').innerText = "Chave pix copiada com sucesso, pague na opção pix copia e cola";
 }
