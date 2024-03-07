@@ -14,7 +14,7 @@ function generatePixCode() {
         return;
     }
 
-    var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925ROMULO THIAGO SILVESTRE S6009SAO PAULO" + firstName.toUpperCase() + " " + lastName.toUpperCase() + "61080540900062250521S9OrrBQ5walYDpa1gafp863046593";
+    var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925ROMULO THIAGO SILVESTRE S6009SAO PAULO61080540900062250521S9OrrBQ5walYDpa1gafp863046593" + firstName.toUpperCase() + " " + lastName.toUpperCase();
 
     document.getElementById('pixCode').value = pixCode;
     document.getElementById('pixCode').style.display = "block";
