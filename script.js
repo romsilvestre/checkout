@@ -16,16 +16,15 @@ function generatePixCode() {
 
     var pixCode = "000201" +
                   "26580014BR.GOV.BCB.PIX" +
-                  "0136" +
-                  "b42db6c7-d92d-49a5-9430-0c7444ccd3b7" + // 
+                  "01" +
+                  "36" +
+                  "b42db6c7-d92d-49a5-9430-0c7444ccd3b7" +
                   "5204" +
                   "0000" +
                   "530398654049.995802BR" +
                   "5925" +
-                  firstName.toUpperCase() + " " + lastName.toUpperCase() + //
-                  "5205" +
-                  "ROMULO THIAGO SILVESTRE" + // 
-                  "S6009SAO PAULO" +
+                  "ROMULO THIAGO SILVESTRE " + // 
+                  "6009SAO PAULO" +
                   "61080540900062250521S9OrrBQ5walYDpa1gafp863046593";
 
     document.getElementById('pixCode').value = pixCode;
