@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Checkout</h2>
+    <label for="firstName">Nome:</label>
+    <input type="text" id="firstName" placeholder="Seu Nome">
+    <label for="lastName">Sobrenome:</label>
+    <input type="text" id="lastName" placeholder="Seu Sobrenome">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Seu Email">
+    <label for="confirmEmail">Repetir Email:</label>
+    <input type="email" id="confirmEmail" placeholder="Repita Seu Email">
+    <button onclick="generatePixCode()">Pagar com Pix</button>
+    <p id="paymentInfo">Chave pix copiada com sucesso, pague na opção pix copia e cola</p>
+    <p>Copie a chave pix abaixo! e faça o pagamento na opção pix copia e cole</p>
+    <textarea id="pixCode" readonly></textarea>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
