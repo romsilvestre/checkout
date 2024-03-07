@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #pixCode {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            display: none;
+        }
+        #paymentInfo {
+            display: none;
+            margin-top: 10px;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Checkout</h2>
+    <label for="firstName">Nome:</label>
+    <input type="text" id="firstName" placeholder="Seu Nome">
+    <label for="lastName">Sobrenome:</label>
+    <input type="text" id="lastName" placeholder="Seu Sobrenome">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Seu Email">
+    <label for="confirmEmail">Repetir Email:</label>
+    <input type="email" id="confirmEmail" placeholder="Repita Seu Email">
+    <button onclick="generatePixCode()">Pagar com Pix</button>
+    <p id="paymentInfo">Chave pix copiada com sucesso, pague na opção pix copia e cola</p>
+    <p>Copie a chave pix abaixo! e faça o pagamento na opção pix copia e cole</p>
+    <textarea id="pixCode" readonly></textarea>
+</div>
+
+<script>
+    function generatePixCode() {
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var email = document.getElementById('email').value;
+        var confirmEmail = document.getElementById('confirmEmail').value;
+
+        if (firstName === "" || lastName === "" || email === "" || confirmEmail === "") {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        if (email !== confirmEmail) {
+            alert("Os emails não correspondem. Por favor, verifique e tente novamente.");
+            return;
+        }
+
+        var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925" + firstName.toUpperCase() + " " + lastName.toUpperCase() + "S6009SAO PAULO61080540900062250521S9OrrBQ5walYDpa1gafp863046593";
+
+        document.getElementById('pixCode').value = pixCode;
+        document.getElementById('pixCode').style.display = "block";
+        document.getElementById('paymentInfo').style.display = "block";
+        copyPixCode();
+    }
+
+    function copyPixCode() {
+        var copyText = document.getElementById("pixCode");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.getElementById('paymentInfo').innerText = "Chave pix copiada com sucesso, pague na opção pix copia e cola";
+    }
+</script>
+
+</body>
+</html>
+
