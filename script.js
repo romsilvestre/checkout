@@ -14,18 +14,22 @@ function generatePixCode() {
         return;
     }
 
-    var pixCode = "00020126580014BR.GOV.BCB.PIX0136b42db6c7-d92d-49a5-9430-0c7444ccd3b752040000530398654049.995802BR5925ROMULO THIAGO SILVESTRE S6009SAO PAULO61080540900062250521S9OrrBQ5walYDpa1gafp863046593" + firstName.toUpperCase() + " " + lastName.toUpperCase();
+    var pixCode = "000201" +
+                  "26580014BR.GOV.BCB.PIX" +
+                  "0136" +
+                  "b42db6c7-d92d-49a5-9430-0c7444ccd3b7" + // Coloquei o separador "-". Se for necessário, pode mudar de volta para o ponto "."
+                  "5204" +
+                  "0000" +
+                  "530398654049.995802BR" +
+                  "5925" +
+                  firstName.toUpperCase() + " " + lastName.toUpperCase() + // Adicionei um espaço entre o primeiro e último nome
+                  "5205" +
+                  "ROMULO THIAGO SILVESTRE" + // Coloquei seu nome diretamente, você pode substituir pelo valor da variável
+                  "S6009SAO PAULO" +
+                  "61080540900062250521S9OrrBQ5walYDpa1gafp863046593";
 
     document.getElementById('pixCode').value = pixCode;
     document.getElementById('pixCode').style.display = "block";
     document.getElementById('paymentInfo').style.display = "block";
     copyPixCode();
-}
-
-function copyPixCode() {
-    var copyText = document.getElementById("pixCode");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    document.getElementById('paymentInfo').innerText = "Chave pix copiada com sucesso, pague na opção pix copia e cola";
 }
